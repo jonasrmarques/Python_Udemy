@@ -19,6 +19,9 @@ try:
                 
             else:
                 print("Digite: 'somar', 'subtrair', 'multiplicar' ou 'dividir'")
-            i+=1
+        else:
+            print("Digite um numéro entre 1 e 10")
+            break
+        i+=1
 except:
     print("Por favor, digite um número inteiro válido")
