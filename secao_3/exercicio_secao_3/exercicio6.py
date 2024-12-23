@@ -3,14 +3,15 @@ Iterando strings com while
 """
 
 nome = "Jonas Rafael"
-nova_string = ""
-contador = 0
+nome_novo = ""
 
-while contador < len(nome):
+i = 0
+
+while i < len(nome):
+    letra = nome[i]
+    nome_novo = nome_novo + f"*{letra}"
     
-    letra = nome[contador]
-    nova_string += f"*{letra}"
-    contador+=1
-    
-nova_string += "*"
-print(nova_string)
+    i+=1
+
+
+print(nome_novo)
