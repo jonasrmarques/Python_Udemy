@@ -9,86 +9,35 @@ Faça um jogo para o usuário adivinhar qual a palavra secreta.
 Faça a contagem de tentativas do seu usuário.
 """
 
-# palavra_secreta = "chocolate"
-# letras_acertadas = ""
+palavra_secreta = "chocolate"
 
-# while True:
-#     tentativa = input("Digite uma letra: ")
-    
-#     if tentativa in palavra_secreta:
-#         letras_acertadas += tentativa
-        
-    
-#     palavra = ""
-#     for letra in palavra_secreta:
-#         if letras_acertadas in letra:
-#             palavra += letra
-#         else:
-#             palavra+= "*"
-            
-#     print(palavra)
-    
+letra_acertada = ""
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-palavra_secreta = "morango"
-letras_acertadas = ''
-
-
+tentativas = 0
 
 while True:
-    letra_digitada = input("Digite uma letra: ")
+    letra_digitada = input("Digite apenas uma letra: ")
+    tentativas += 1
+    
     
     if len(letra_digitada) > 1:
-        print("Digite apenas uma letra.")
+        print("Por favor digite apenas uma letra")
         continue
     
     if letra_digitada in palavra_secreta:
-        letras_acertadas += letra_digitada
-    
-    palavra_formada = ''
-    
-    for letra_secreta in palavra_secreta:
-        if letra_secreta in letras_acertadas:
-            palavra_formada += letra_secreta
-        else:
-            palavra_formada = "*"
+        letra_acertada += letra_digitada
         
-    
+        
+    palavra_formada = "" 
+    for letra in palavra_secreta:
+        if letra in letra_acertada:
+            palavra_formada += letra
+        else:
+            palavra_formada += "*"
+            
+            
     print(palavra_formada)
-    
+            
     if palavra_formada == palavra_secreta:
-        print(f"Parabéns, você acertou a palavra secreta, que era: {palavra_secreta}")
-        break
+        print(f"Parabéns, você acertou a palavra secreta!!, a palavra secreta era: {palavra_secreta} com um total de {tentativas} tentativas")
+            
